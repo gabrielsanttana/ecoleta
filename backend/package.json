@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
-    "migrate": "knex migrate:latest --knexfile knexfile.ts migrate:latest"
+    "migrate": "knex --knexfile knexfile.ts migrate:latest",
+    "seed": "knex --knexfile knexfile.ts seed:run"
   },
   "repository": {
     "type": "git",
