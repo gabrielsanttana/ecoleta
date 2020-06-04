@@ -25,9 +25,7 @@ class PointController {
       itemsIds
     }
   
-    const trx = await knex.transaction();
-  
-    const pointIds = await trx('points').insert({
+    const pointIds = await knex('points').insert({
       image: 'default',
       name,
       email, 
@@ -45,7 +43,7 @@ class PointController {
       } 
     });
   
-    await trx('points_items').insert(pointItems);
+    await knex('points_items').insert(pointItems);
   
     return response.json({
       point_id: pointIds[0],
