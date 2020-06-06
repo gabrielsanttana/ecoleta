@@ -80,14 +80,14 @@
   flex: 1;
 }
 
-#create-point form .field-group .field + .field {
-  margin-left: 24px;
-}
-
 #create-point form .field label {
   font-size: 14px;
   margin-bottom: 8px;
 } 
+
+#create-point form .field-group .field + .field {
+  margin-left: 24px;
+}
 
 #create-point form .field input[type=text],
 #create-point form .field input[type=email],
