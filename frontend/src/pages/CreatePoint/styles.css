@@ -1,3 +1,7 @@
+* {
+  outline: none;
+}
+
 #create-point {
   width: 100%;
   max-width: 1100px;
@@ -76,6 +80,15 @@
   flex: 1;
 }
 
+#create-point form .field-group .field + .field {
+  margin-left: 24px;
+}
+
+#create-point form .field label {
+  font-size: 14px;
+  margin-bottom: 8px;
+} 
+
 #create-point form .field input[type=text],
 #create-point form .field input[type=email],
 #create-point form .field input[type=number] {
@@ -86,4 +99,81 @@
   padding: 16px 24px;
   font-size: 16px;
   color: #6C6C80;
+}
+
+#create-point form .field input::placeholder select::placeholder {
+  color: #A0A0B2;
+}
+
+#create-point form .field select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  flex: 1;
+  background: #F0F0F5;
+  border-radius: 8px;
+  border: 0;
+  padding: 16px 24px;
+  font-size: 16px;
+  color: #6C6C80;
+}
+
+#create-point form .field :disabled {
+  cursor: not-allowed;
+}
+
+#create-point .items-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+#create-point .items-grid li {
+  background: #f5f5f5;
+  border: 2px solid #f5f5f5;
+  height: 180px;
+  border-radius: 8px;
+  padding: 32px 24px 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+#create-point .items-grid li.selected {
+  background: #E1FAEC;
+  border: 2px solid #34CB79;
+}
+
+#create-point .items-grid li span {
+  flex: 1;
+  margin-top: 12px;
+  font-size: 14px;
+
+  display: flex;
+  align-items: center;
+  color: var(--title-color)
+}
+
+#create-point button {
+  width: 260px;
+  height: 56px;
+  background: var(--primary-color);
+  border-radius: 8px;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 16px;
+  border: 0;
+  align-self: flex-end;
+  margin-top: 40px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+#create-point button:hover {
+  background-color: #2FB86E;
 }
