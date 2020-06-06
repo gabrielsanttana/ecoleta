@@ -1,0 +1,100 @@
+#home {
+  height: 100vh;
+  background: url('../../assets/home-background.svg') no-repeat 600px bottom;
+}
+
+#home .content {
+  width: 100%;
+  height: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#home .content header {
+  margin-top: 48px;
+}
+
+#home .content main {
+  flex: 1;
+  max-width: 560px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#home .content main h1 {
+  font-size: 54px;
+  color: var(--title-color);
+}
+
+#home .content main p {
+  font-size: 24px;
+  margin-top: 24px;
+  line-height: 38px;
+}
+
+#home .content a {
+  width: 100%;
+  max-width: 360px;
+  height: 72px;
+  background: var(--primary-color);
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 40px;
+
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: background-color 0.2s;
+}
+
+#home .content a:hover {
+  background-color: #2FB86E;
+}
+
+#home .content a svg {
+
+}
+
+#home .content a span {
+  background: rgba(0, 0, 0, 0.08);
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+#home .content a strong {
+  flex: 1;
+  font-size: 18px;
+  text-align: center;
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  #home .content {
+    align-items: center;
+    text-align: center;
+  }
+  
+  #home .content main {
+    align-items: center;
+  }
+
+  #home .content main h1 {
+    font-size: 42px;
+  }
+
+  #home .content main p {
+    font-size: 24px;
+  }
+} 

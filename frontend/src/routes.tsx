@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 
-import Home from './pages/Home';
+import Home from './pages/Home/index';
 
 const Routes = () => {
   return (
