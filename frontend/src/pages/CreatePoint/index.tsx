@@ -103,28 +103,28 @@ const CreatePoint: React.FC = () => {
 
           <ul className="items-grid">
             <li>
-              <img src="http://localhost:3333/uploads/oleo.svg" alt=""/>
-              <span>Óleo de cozinha</span>
+              <img src="http://localhost:3333/uploads/lampadas.svg" alt=""/>
+              <span>Lâmpadas</span>
             </li>
 
             <li>
-              <img src="http://localhost:3333/uploads/oleo.svg" alt=""/>
-              <span>Óleo de cozinha</span>
+              <img src="http://localhost:3333/uploads/baterias.svg" alt=""/>
+              <span>Pilhas e baterias</span>
             </li>
 
             <li>
-              <img src="http://localhost:3333/uploads/oleo.svg" alt=""/>
-              <span>Óleo de cozinha</span>
+              <img src="http://localhost:3333/uploads/papeis-papelao.svg" alt=""/>
+              <span>Papéis e papelão</span>
             </li>
 
             <li>
-              <img src="http://localhost:3333/uploads/oleo.svg" alt=""/>
-              <span>Óleo de cozinha</span>
+              <img src="http://localhost:3333/uploads/eletronicos.svg" alt=""/>
+              <span>Resíduos eletrônicos</span>
             </li>
 
             <li>
-              <img src="http://localhost:3333/uploads/oleo.svg" alt=""/>
-              <span>Óleo de cozinha</span>
+              <img src="http://localhost:3333/uploads/organicos.svg" alt=""/>
+              <span>Resíduos orgânicos</span>
             </li>
 
             <li>
