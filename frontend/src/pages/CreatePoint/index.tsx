@@ -33,6 +33,7 @@ const CreatePoint: React.FC = () => {
               name="name" 
               id="name"
               placeholder="Digite o nome"
+              autoFocus
             />
           </div>
 

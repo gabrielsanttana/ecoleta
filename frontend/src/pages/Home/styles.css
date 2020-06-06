@@ -1,6 +1,6 @@
 #home {
   height: 100vh;
-  background: url('../../assets/home-background.svg') no-repeat 600px bottom;
+  background: url('../../assets/home-background.svg') no-repeat 800px bottom;
 }
 
 #home .content {
@@ -80,6 +80,12 @@
   color: #ffffff;
 }
 
+@media (max-width: 1300px) {
+  #home {
+    background: url('../../assets/home-background.svg') no-repeat 600px bottom;
+  }
+}
+
 @media (max-width: 900px) {
   #home .content {
     align-items: center;
@@ -97,4 +103,4 @@
   #home .content main p {
     font-size: 24px;
   }
-} 
+}
