@@ -43,6 +43,8 @@ $ npm seed
 $ node src/server.js
 ```
 
+The API will start serving on http://localhost:3333
+
 #### Web
 
 ```bash
