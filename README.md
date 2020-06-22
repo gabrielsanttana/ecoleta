@@ -9,6 +9,7 @@
 ## 🛠️ Technologies
 
 <ul>
+  <li><a href="https://www.typescriptlang.org/">TypeScript</a></li>
   <li><a href="https://nodejs.org/en/">Node.js</a></li>
   <li><a href="https://expressjs.com/">Express</a></li>
   <li><a href="https://reactjs.org/">React</a></li>
