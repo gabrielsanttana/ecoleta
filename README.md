@@ -4,7 +4,7 @@
 
 #####
 
-<p align="center">An application to help people identify recycling collection points ♻️</p>
+<p align="center">An application that helps people identify recycling collection points ♻️</p>
 
 ## 🛠️ Technologies
 
