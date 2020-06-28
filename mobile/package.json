@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "@expo-google-fonts/roboto": "^0.1.0",
+    "@expo-google-fonts/ubuntu": "^0.1.0",
     "expo": "37.0.7",
+    "expo-font": "~8.1.0",
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
@@ -8,9 +11,9 @@
     "react-native-web": "0.11.7"
   },
   "devDependencies": {
+    "@babel/core": "7.9.0",
     "@types/react": "16.9.0",
     "@types/react-native": "0.61.23",
-    "@babel/core": "7.9.0",
     "typescript": "3.8.3"
   },
   "scripts": {
