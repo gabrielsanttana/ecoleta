@@ -39,9 +39,9 @@ $ git clone https://github.com/gabrielsanttana/ecoleta
 ```bash
 $ cd ecoleta/backend
 $ npm install
-$ npm migrate
-$ npm seed
-$ node src/server.js
+$ npm run migrate
+$ npm run seed
+$ npm run dev
 ```
 
 The API will start serving on http://localhost:3333
