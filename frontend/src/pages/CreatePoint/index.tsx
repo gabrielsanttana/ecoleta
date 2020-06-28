@@ -10,8 +10,8 @@ const CreatePoint: React.FC = () => {
   return (
     <div id="create-point">
       <header>
-        <img src={logo} alt="Ecoleta Logo"/>
-        
+        <img src={logo} alt="Ecoleta Logo" />
+
         <Link to="/">
           <FiArrowLeft />
           Voltar para home
@@ -19,7 +19,10 @@ const CreatePoint: React.FC = () => {
       </header>
 
       <form>
-        <h1>Cadastro do ponto<br/> de coleta</h1>
+        <h1>
+          Cadastro do ponto
+          <br /> de coleta
+        </h1>
 
         <fieldset>
           <legend>
@@ -28,9 +31,9 @@ const CreatePoint: React.FC = () => {
 
           <div className="field">
             <label htmlFor="name">Nome da entidade</label>
-            <input 
-              type="text" 
-              name="name" 
+            <input
+              type="text"
+              name="name"
               id="name"
               placeholder="Digite o nome"
               autoFocus
@@ -40,9 +43,9 @@ const CreatePoint: React.FC = () => {
           <div className="field-group">
             <div className="field">
               <label htmlFor="email">E-mail</label>
-              <input 
-                type="email" 
-                name="email" 
+              <input
+                type="email"
+                name="email"
                 id="email"
                 placeholder="Digite o e-mail"
               />
@@ -50,9 +53,9 @@ const CreatePoint: React.FC = () => {
 
             <div className="field">
               <label htmlFor="whatsapp">Whatsapp</label>
-              <input 
-                type="text" 
-                name="whatsapp" 
+              <input
+                type="text"
+                name="whatsapp"
                 id="whatsapp"
                 placeholder="Digite o whatsapp"
               />
@@ -70,14 +73,14 @@ const CreatePoint: React.FC = () => {
           <div className="field-group">
             <div className="field">
               <label htmlFor="number">Número</label>
-              <input 
-                type="text"  
-                name="number" 
-                id="number" 
+              <input
+                type="text"
+                name="number"
+                id="number"
                 placeholder="Digite o número"
               />
             </div>
-            
+
             <div className="field">
               <label htmlFor="state">Estado</label>
               <select name="state" id="state">
@@ -103,32 +106,35 @@ const CreatePoint: React.FC = () => {
 
           <ul className="items-grid">
             <li>
-              <img src="http://localhost:3333/uploads/lampadas.svg" alt=""/>
+              <img src="http://localhost:3333/uploads/lampadas.svg" alt="" />
               <span>Lâmpadas</span>
             </li>
 
             <li>
-              <img src="http://localhost:3333/uploads/baterias.svg" alt=""/>
+              <img src="http://localhost:3333/uploads/baterias.svg" alt="" />
               <span>Pilhas e baterias</span>
             </li>
 
             <li>
-              <img src="http://localhost:3333/uploads/papeis-papelao.svg" alt=""/>
+              <img
+                src="http://localhost:3333/uploads/papeis-papelao.svg"
+                alt=""
+              />
               <span>Papéis e papelão</span>
             </li>
 
             <li>
-              <img src="http://localhost:3333/uploads/eletronicos.svg" alt=""/>
+              <img src="http://localhost:3333/uploads/eletronicos.svg" alt="" />
               <span>Resíduos eletrônicos</span>
             </li>
 
             <li>
-              <img src="http://localhost:3333/uploads/organicos.svg" alt=""/>
+              <img src="http://localhost:3333/uploads/organicos.svg" alt="" />
               <span>Resíduos orgânicos</span>
             </li>
 
             <li>
-              <img src="http://localhost:3333/uploads/oleo.svg" alt=""/>
+              <img src="http://localhost:3333/uploads/oleo.svg" alt="" />
               <span>Óleo de cozinha</span>
             </li>
           </ul>
@@ -138,6 +144,6 @@ const CreatePoint: React.FC = () => {
       </form>
     </div>
   );
-}
+};
 
 export default CreatePoint;
