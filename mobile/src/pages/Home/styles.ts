@@ -50,6 +50,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
+  buttonIconText: {
+    color: '#fff',
+  },
+
   buttonText: {
     color: '#fff',
     flex: 1,
