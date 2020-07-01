@@ -1,9 +1,16 @@
 import React from 'react';
 import {View, Text, Image, ImageBackground} from 'react-native';
 import {RectButton} from 'react-native-gesture-handler';
+import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
 
 const Home: React.FC = () => {
+  const navigator = useNavigation();
+
+  const navigateToPointsPage = () => {
+    navigator.navigate('Points');
+  };
+
   return (
     <ImageBackground
       source={require('../../assets/home-background.png')}
@@ -20,7 +27,7 @@ const Home: React.FC = () => {
       </View>
 
       <View style={styles.footer}>
-        <RectButton style={styles.button}>
+        <RectButton style={styles.button} onPress={navigateToPointsPage}>
           <View style={styles.buttonIcon}>
             <Text style={styles.buttonIconText}>{'>'}</Text>
           </View>
