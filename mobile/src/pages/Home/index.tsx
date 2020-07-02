@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, Image, ImageBackground} from 'react-native';
 import {RectButton} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
+import {Feather as Icon} from '@expo/vector-icons';
 import styles from './styles';
 
 const Home: React.FC = () => {
@@ -29,7 +30,9 @@ const Home: React.FC = () => {
       <View style={styles.footer}>
         <RectButton style={styles.button} onPress={navigateToPointsPage}>
           <View style={styles.buttonIcon}>
-            <Text style={styles.buttonIconText}>{'>'}</Text>
+            <Text style={styles.buttonIconText}>
+              <Icon name="arrow-right" size={16} color="#fff" />
+            </Text>
           </View>
           <Text style={styles.buttonText}>Entrar</Text>
         </RectButton>
