@@ -35,7 +35,7 @@
 $ git clone https://github.com/gabrielsanttana/ecoleta
 ```
 
-### API
+### 🗄️ API
 ```bash
 $ cd ecoleta/backend
 $ npm install
@@ -46,7 +46,7 @@ $ npm run dev
 
 The API will start serving on http://localhost:3333
 
-### Web
+### 💻 Web
 
 ```bash
 $ cd ecoleta/frontend
