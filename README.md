@@ -35,7 +35,7 @@
 $ git clone https://github.com/gabrielsanttana/ecoleta
 ```
 
-### API
+### 🗄️ API
 ```bash
 $ cd ecoleta/backend
 $ npm install
@@ -46,7 +46,7 @@ $ npm run dev
 
 The API will start serving on http://localhost:3333
 
-### Web
+### 💻 Web
 
 ```bash
 $ cd ecoleta/frontend
@@ -55,6 +55,23 @@ $ npm start
 ```
 
 The application will pop-up in the browser on http://localhost:3000
+
+### 📱 Mobile
+
+To run the mobile application, it's necessary to have an React Native Expo environment setup and the Expo mobile app installed on your smartphone.
+It's also necessary that both the smartphone and the computer are connected to the same network.
+
+With that:
+
+```bash
+$ npm install -g expo-cli
+$ cd be-the-hero/mobile
+$ npm install
+$ npm start
+```
+
+<p>A new window with application log will open in the browser</p>
+<p>Then, you can load the app by scanning the QR code with the Expo mobile app or by using the local URL</p>
 
 ## ⚖️ License
 
