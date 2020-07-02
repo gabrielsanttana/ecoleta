@@ -10,7 +10,7 @@ const Points: React.FC = () => {
   const navigator = useNavigation();
 
   const navigateToHome = () => {
-    return navigator.navigate('Home');
+    return navigator.goBack();
   };
 
   return (
