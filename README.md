@@ -35,6 +35,12 @@
 $ git clone https://github.com/gabrielsanttana/ecoleta
 ```
 
+Before running the backend, it's necessary to have an environment variable with the local machine IP address inside a .env file in the project root, in order to make the mobile app able to call the API:
+
+```
+API_IP_ADDRESS=your_ip_address
+```
+
 ### 🗄️ API
 ```bash
 $ cd ecoleta/backend
