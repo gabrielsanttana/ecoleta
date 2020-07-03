@@ -43,6 +43,8 @@ Before running the backend, it's necessary to have an environment variable with 
 API_IP_ADDRESS=your_ip_address
 ```
 
+Then:
+
 ```bash
 $ cd ecoleta/backend
 $ npm install
