@@ -37,10 +37,10 @@ $ git clone https://github.com/gabrielsanttana/ecoleta
 
 ### 🗄️ API
 
-Before running the backend, it's necessary to have an environment variable with the local machine IP address inside a .env file in the project root, in order to make the mobile app able to call the API:
+As the web and mobile app use the same API, before running the backend, it's necessary to have an environment variable with the local host IP address inside a .env file in the project root, in order to make React Native able to call the API:
 
 ```
-API_IP_ADDRESS=your_ip_address
+API_IP_ADDRESS=ip_address
 ```
 
 Then:
