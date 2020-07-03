@@ -24,17 +24,46 @@ const styles = StyleSheet.create({
   },
 
   mapContainer: {
-    borderRadius: 16,
+    flex: 1,
+    width: '100%',
+    borderRadius: 10,
+    overflow: 'hidden',
+    marginTop: 16,
   },
 
   map: {
-    height: 500,
     width: '100%',
+    height: '100%',
   },
 
-  itemsContainer: {},
+  itemsContainer: {
+    flexDirection: 'row',
+    marginTop: 16,
+    marginBottom: 10,
+  },
 
-  item: {},
+  item: {
+    paddingHorizontal: 16,
+    paddingTop: 20,
+    paddingBottom: 16,
+    backgroundColor: '#fff',
+    borderWidth: 2,
+    borderColor: '#eee',
+    borderRadius: 8,
+    marginRight: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  itemTitle: {
+    marginTop: 20,
+    fontSize: 13,
+  },
+
+  selectedItem: {
+    borderColor: '#34CB79',
+    borderWidth: 2,
+  },
 });
 
 export default styles;
