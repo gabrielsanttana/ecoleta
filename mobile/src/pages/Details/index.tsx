@@ -1,14 +1,20 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
-import {RectButton} from 'react-native-gesture-handler';
 import {FontAwesome as Icon} from '@expo/vector-icons';
+import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
 
 const Details: React.FC = () => {
+  const navigator = useNavigation();
+
+  function navigateBack() {
+    navigator.navigate('Points');
+  }
+
   return (
     <>
       <View style={styles.container}>
-        <TouchableOpacity style={styles.goBackButton}>
+        <TouchableOpacity style={styles.goBackButton} onPress={navigateBack}>
           <Icon name="arrow-left" size={24} color="#34CB79" />
         </TouchableOpacity>
 

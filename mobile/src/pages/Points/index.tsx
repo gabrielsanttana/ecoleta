@@ -11,7 +11,7 @@ import styles from './styles';
 const Points: React.FC = () => {
   const navigator = useNavigation();
 
-  function navigateToHomePage() {
+  function navigateBack() {
     navigator.goBack();
   }
 
@@ -22,7 +22,7 @@ const Points: React.FC = () => {
   return (
     <>
       <View style={styles.container}>
-        <TouchableOpacity style={styles.button} onPress={navigateToHomePage}>
+        <TouchableOpacity style={styles.button} onPress={navigateBack}>
           <Icon name="arrow-left" size={24} color="#34CB79" />
         </TouchableOpacity>
 
