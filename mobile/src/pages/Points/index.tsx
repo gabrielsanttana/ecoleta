@@ -17,6 +17,7 @@ interface Item {
 
 const Points: React.FC = () => {
   const [items, setItems] = useState<Item[]>([]);
+  const [selectedItems, setSelectedItems] = useState<number[]>([]);
 
   useEffect(() => {
     api.get('/items').then((response) => {
@@ -32,6 +33,22 @@ const Points: React.FC = () => {
 
   function navigateToDetailsPage() {
     navigator.navigate('Details');
+  }
+
+  function selectPressedItem(item: number) {
+    const alreadySelected = selectedItems.findIndex(
+      (selectedItem) => selectedItem === item,
+    );
+
+    if (alreadySelected >= 0) {
+      const itemsWithoutPressedItem = selectedItems.filter(
+        (selectedItem) => selectedItem !== item,
+      );
+
+      setSelectedItems(itemsWithoutPressedItem);
+    } else {
+      setSelectedItems([...selectedItems, item]);
+    }
   }
 
   return (
@@ -89,8 +106,9 @@ const Points: React.FC = () => {
             return (
               <TouchableOpacity
                 style={styles.item}
-                onPress={() => {}}
-                key={item.id}
+                onPress={() => selectPressedItem(item.id)}
+                key={String(item.id)}
+                activeOpacity={0.6}
               >
                 <SvgUri width={42} height={42} uri={item.image_url} />
                 <Text style={styles.itemTitle}>{item.title}</Text>
