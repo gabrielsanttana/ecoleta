@@ -6,9 +6,24 @@ import MapView, {Marker} from 'react-native-maps';
 import {useNavigation} from '@react-navigation/native';
 import {SvgUri} from 'react-native-svg';
 import {ScrollView} from 'react-native';
+import api from '../../services/api';
 import styles from './styles';
 
+interface Item {
+  id: number;
+  title: string;
+  image_url: string;
+}
+
 const Points: React.FC = () => {
+  const [items, setItems] = useState<Item[]>([]);
+
+  useEffect(() => {
+    api.get('/items').then((response) => {
+      setItems(response.data);
+    });
+  }, []);
+
   const navigator = useNavigation();
 
   function navigateBack() {
