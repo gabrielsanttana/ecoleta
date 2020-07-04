@@ -15,9 +15,18 @@ interface Item {
   image_url: string;
 }
 
+interface Point {
+  id: number;
+  imageUrl: string;
+  name: string;
+  latitude: number;
+  longitude: number;
+}
+
 const Points: React.FC = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
+  const [points, setPoints] = useState<Point[]>([]);
   const [initialPosition, setInitialPosition] = useState<[number, number]>([
     0,
     0,
@@ -43,6 +52,18 @@ const Points: React.FC = () => {
     }
 
     loadInitialPosition();
+  }, []);
+
+  useEffect(() => {
+    api
+      .get('/points', {
+        params: {
+          city: 'Americana',
+          uf: 'SP',
+          items: [1, 2, 3, 4, 5, 6],
+        },
+      })
+      .then((response) => setPoints(response.data));
   }, []);
 
   useEffect(() => {
@@ -101,25 +122,28 @@ const Points: React.FC = () => {
                 longitudeDelta: 0.014,
               }}
             >
-              <Marker
-                style={styles.mapMarker}
-                coordinate={{
-                  latitude: -22.7821346,
-                  longitude: -47.3412927,
-                }}
-                onPress={navigateToDetailsPage}
-              >
-                <View style={styles.mapMarkerContainer}>
-                  <Image
-                    style={styles.mapMarkerImage}
-                    source={{
-                      uri:
-                        'https://www.tce.sp.gov.br/sites/default/files/styles/max_800x800/public/noticias/coleta%20seletivaaa.png',
+              {points.map((point) => {
+                return (
+                  <Marker
+                    style={styles.mapMarker}
+                    coordinate={{
+                      latitude: point.latitude,
+                      longitude: point.longitude,
                     }}
-                  />
-                  <Text style={styles.mapMarkerTitle}>Mercado</Text>
-                </View>
-              </Marker>
+                    onPress={navigateToDetailsPage}
+                  >
+                    <View style={styles.mapMarkerContainer}>
+                      <Image
+                        style={styles.mapMarkerImage}
+                        source={{
+                          uri: point.imageUrl,
+                        }}
+                      />
+                      <Text style={styles.mapMarkerTitle}>{point.name}</Text>
+                    </View>
+                  </Marker>
+                );
+              })}
             </MapView>
           )}
         </View>

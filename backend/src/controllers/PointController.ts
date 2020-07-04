@@ -4,54 +4,55 @@ import knex from '../database/connection';
 class PointController {
   async create(request: Request, response: Response) {
     const {
-      name, 
+      name,
+      image,
       email,
       whatsapp,
       latitude,
       longitude,
       city,
       uf,
-      itemsIds
+      itemsIds,
     } = request.body;
 
     const point = {
-      name, 
+      name,
       email,
       whatsapp,
       latitude,
       longitude,
       city,
       uf,
-      itemsIds
-    }
+      itemsIds,
+    };
 
     const trx = await knex.transaction();
-  
+
     const pointIds = await trx('points').insert({
-      image: 'default',
+      image,
       name,
-      email, 
+      email,
       whatsapp,
       latitude,
       longitude,
       city,
-      uf
+      uf,
     });
-  
+
     const pointItems = itemsIds.map((itemId: number) => {
       return {
         point_id: pointIds[0],
-        item_id: itemId
-      } 
+        item_id: itemId,
+      };
     });
-  
+
     await trx('points_items').insert(pointItems);
 
     await trx.commit();
-  
+
     return response.json({
       point_id: pointIds[0],
-      ...point
+      ...point,
     });
   }
 
@@ -60,7 +61,7 @@ class PointController {
 
     const parsedItems = String(items)
       .split(',')
-      .map(item => Number(item.trim()));
+      .map((item) => Number(item.trim()));
 
     const points = await knex('points')
       .join('points_items', 'points.id', '=', 'points_items.point_id')
@@ -78,17 +79,17 @@ class PointController {
 
     const point = await knex('points').where('id', id).first();
 
-    if(!point) {
-      return response.status(400).json({error: "Point not found"});
-    } 
+    if (!point) {
+      return response.status(400).json({error: 'Point not found'});
+    }
 
     const collectedItems = await knex('items')
       .join('points_items', 'items.id', '=', 'points_items.item_id')
-      .where('points_items.point_id', id); 
+      .where('points_items.point_id', id);
 
     return response.json({
       point,
-      collectedItems  
+      collectedItems,
     });
   }
 }
