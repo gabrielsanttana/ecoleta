@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, ScrollView, Alert} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Feather as Icon} from '@expo/vector-icons';
 import MapView, {Marker} from 'react-native-maps';
 import {useNavigation} from '@react-navigation/native';
 import {SvgUri} from 'react-native-svg';
-import {ScrollView} from 'react-native';
+import * as Location from 'expo-location';
 import api from '../../services/api';
 import styles from './styles';
 
@@ -18,6 +18,32 @@ interface Item {
 const Points: React.FC = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
+  const [initialPosition, setInitialPosition] = useState<[number, number]>([
+    0,
+    0,
+  ]);
+
+  useEffect(() => {
+    async function loadInitialPosition() {
+      const {status} = await Location.requestPermissionsAsync();
+
+      if (status !== 'granted') {
+        Alert.alert(
+          'Oops...',
+          'Precisamos da sua permissão para obter sua localização',
+        );
+        return;
+      }
+
+      const location = await Location.getCurrentPositionAsync();
+
+      const {latitude, longitude} = location.coords;
+
+      setInitialPosition([latitude, longitude]);
+    }
+
+    loadInitialPosition();
+  }, []);
 
   useEffect(() => {
     api.get('/items').then((response) => {
@@ -66,9 +92,10 @@ const Points: React.FC = () => {
         <View style={styles.mapContainer}>
           <MapView
             style={styles.map}
+            loadingEnabled={initialPosition[0] === 0}
             initialRegion={{
-              latitude: -22.7821346,
-              longitude: -47.3412927,
+              latitude: initialPosition[0],
+              longitude: initialPosition[1],
               latitudeDelta: 0.014,
               longitudeDelta: 0.014,
             }}
