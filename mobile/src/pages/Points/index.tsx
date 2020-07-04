@@ -47,6 +47,7 @@ const Points: React.FC = () => {
                 latitude: -22.7821346,
                 longitude: -47.3412927,
               }}
+              onPress={navigateToDetailsPage}
             >
               <View style={styles.mapMarkerContainer}>
                 <Image
@@ -69,7 +70,7 @@ const Points: React.FC = () => {
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{paddingHorizontal: 24}}
         >
-          <TouchableOpacity style={styles.item} onPress={navigateToDetailsPage}>
+          <TouchableOpacity style={styles.item} onPress={() => {}}>
             <SvgUri
               width={42}
               height={42}
@@ -78,7 +79,7 @@ const Points: React.FC = () => {
             <Text style={styles.itemTitle}>Lâmpadas</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.item} onPress={navigateToDetailsPage}>
+          <TouchableOpacity style={styles.item} onPress={() => {}}>
             <SvgUri
               width={42}
               height={42}
@@ -87,7 +88,7 @@ const Points: React.FC = () => {
             <Text style={styles.itemTitle}>Lâmpadas</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.item} onPress={navigateToDetailsPage}>
+          <TouchableOpacity style={styles.item} onPress={() => {}}>
             <SvgUri
               width={42}
               height={42}
@@ -96,7 +97,7 @@ const Points: React.FC = () => {
             <Text style={styles.itemTitle}>Lâmpadas</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.item} onPress={navigateToDetailsPage}>
+          <TouchableOpacity style={styles.item} onPress={() => {}}>
             <SvgUri
               width={42}
               height={42}
@@ -105,7 +106,7 @@ const Points: React.FC = () => {
             <Text style={styles.itemTitle}>Lâmpadas</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.item} onPress={navigateToDetailsPage}>
+          <TouchableOpacity style={styles.item} onPress={() => {}}>
             <SvgUri
               width={42}
               height={42}
@@ -114,7 +115,7 @@ const Points: React.FC = () => {
             <Text style={styles.itemTitle}>Lâmpadas</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.item} onPress={navigateToDetailsPage}>
+          <TouchableOpacity style={styles.item} onPress={() => {}}>
             <SvgUri
               width={42}
               height={42}
