@@ -105,7 +105,10 @@ const Points: React.FC = () => {
           {items.map((item) => {
             return (
               <TouchableOpacity
-                style={styles.item}
+                style={[
+                  styles.item,
+                  selectedItems.includes(item.id) ? styles.selectedItem : {},
+                ]}
                 onPress={() => selectPressedItem(item.id)}
                 key={String(item.id)}
                 activeOpacity={0.6}
