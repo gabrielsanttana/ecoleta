@@ -1,10 +1,40 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {RectButton} from 'react-native-gesture-handler';
+import {FontAwesome as Icon} from '@expo/vector-icons';
+import styles from './styles';
 
 const Details: React.FC = () => {
   return (
-    <View>
-      <Text>Details</Text>
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.goBackButton}>
+        <Icon name="arrow-left" size={16} color="#34CB79" />
+      </TouchableOpacity>
+
+      <Image
+        style={styles.image}
+        source={{
+          uri:
+            'https://www.tce.sp.gov.br/sites/default/files/styles/max_800x800/public/noticias/coleta%20seletivaaa.png',
+        }}
+      />
+
+      <Text style={styles.pointTitle}>Mercado do Carlão</Text>
+      <Text style={styles.pointItems}>Lâmpadas, Óleo de Cozinha</Text>
+
+      <Text style={styles.pointAddressTitle}>Endereço</Text>
+      <Text style={styles.pointAddressDescription}>Americana, São Paulo</Text>
+
+      <View style={styles.footer}>
+        <RectButton style={styles.contactButton}>
+          <Icon name="whatsapp" size={16} color="#fff" />
+          <Text style={styles.contactButtonText}>Whatsapp</Text>
+        </RectButton>
+        <RectButton style={styles.contactButton}>
+          <Icon name="envelope" size={16} color="#fff" />
+          <Text style={styles.contactButtonText}>E-mail</Text>
+        </RectButton>
+      </View>
     </View>
   );
 };
