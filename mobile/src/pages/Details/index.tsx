@@ -15,7 +15,7 @@ const Details: React.FC = () => {
     <>
       <View style={styles.container}>
         <TouchableOpacity style={styles.goBackButton} onPress={navigateBack}>
-          <Icon name="arrow-left" size={24} color="#34CB79" />
+          <Icon name="arrow-left" size={22} color="#34CB79" />
         </TouchableOpacity>
 
         <Image

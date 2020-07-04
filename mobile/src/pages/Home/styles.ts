@@ -30,8 +30,6 @@ const styles = StyleSheet.create({
 
   footer: {},
 
-  select: {},
-
   button: {
     backgroundColor: '#34CB79',
     height: 60,
@@ -48,6 +46,8 @@ const styles = StyleSheet.create({
     width: 60,
     justifyContent: 'center',
     alignItems: 'center',
+    borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10,
   },
 
   buttonIconText: {

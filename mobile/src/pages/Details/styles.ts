@@ -20,28 +20,28 @@ const styles = StyleSheet.create({
   },
 
   pointTitle: {
-    fontSize: 22,
+    fontSize: 21,
     fontWeight: 'bold',
     marginTop: 24,
     color: '#322153',
   },
 
   pointItems: {
-    fontSize: 16,
+    fontSize: 14,
     lineHeight: 24,
     color: '#6C6C80',
     marginBottom: 4,
   },
 
   pointAddressTitle: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
     marginTop: 24,
     color: '#322153',
   },
 
   pointAddressDescription: {
-    fontSize: 16,
+    fontSize: 14,
     lineHeight: 24,
     color: '#6C6C80',
   },
