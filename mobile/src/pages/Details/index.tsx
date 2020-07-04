@@ -1,10 +1,25 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import {FontAwesome as Icon} from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native';
+import api from '../../services/api';
 import styles from './styles';
 
+interface Item {
+  id: number;
+  title: string;
+  image_url: string;
+}
+
 const Details: React.FC = () => {
+  const [items, setItems] = useState<Item[]>([]);
+
+  useEffect(() => {
+    api.get('/items').then((response) => {
+      setItems(response.data);
+    });
+  }, []);
+
   const navigator = useNavigation();
 
   function navigateBack() {
