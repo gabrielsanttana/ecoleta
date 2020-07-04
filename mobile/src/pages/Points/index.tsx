@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Feather as Icon} from '@expo/vector-icons';
-import MapView from 'react-native-maps';
+import MapView, {Marker} from 'react-native-maps';
 import {useNavigation} from '@react-navigation/native';
 import {SvgUri} from 'react-native-svg';
 import {ScrollView} from 'react-native';
@@ -11,9 +11,9 @@ import styles from './styles';
 const Points: React.FC = () => {
   const navigator = useNavigation();
 
-  const navigateToHome = () => {
+  function navigateToHome() {
     return navigator.goBack();
-  };
+  }
 
   return (
     <>
@@ -28,7 +28,34 @@ const Points: React.FC = () => {
         </Text>
 
         <View style={styles.mapContainer}>
-          <MapView style={styles.map} />
+          <MapView
+            style={styles.map}
+            initialRegion={{
+              latitude: -22.7821346,
+              longitude: -47.3412927,
+              latitudeDelta: 0.014,
+              longitudeDelta: 0.014,
+            }}
+          >
+            <Marker
+              style={styles.mapMarker}
+              coordinate={{
+                latitude: -22.7821346,
+                longitude: -47.3412927,
+              }}
+            >
+              <View style={styles.mapMarkerContainer}>
+                <Image
+                  style={styles.mapMarkerImage}
+                  source={{
+                    uri:
+                      'https://www.tce.sp.gov.br/sites/default/files/styles/max_800x800/public/noticias/coleta%20seletivaaa.png',
+                  }}
+                />
+                <Text style={styles.mapMarkerTitle}>Mercado</Text>
+              </View>
+            </Marker>
+          </MapView>
         </View>
       </View>
 

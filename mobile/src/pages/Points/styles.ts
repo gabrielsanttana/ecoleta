@@ -36,6 +36,35 @@ const styles = StyleSheet.create({
     height: '100%',
   },
 
+  mapMarker: {
+    width: 90,
+    height: 80,
+  },
+
+  mapMarkerContainer: {
+    width: 90,
+    height: 70,
+    backgroundColor: '#34CB79',
+    flexDirection: 'column',
+    borderRadius: 8,
+    overflow: 'hidden',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  mapMarkerImage: {
+    width: 90,
+    height: 45,
+    resizeMode: 'cover',
+  },
+
+  mapMarkerTitle: {
+    flex: 1,
+    color: '#FFF',
+    fontSize: 13,
+    lineHeight: 23,
+  },
+
   itemsContainer: {
     flexDirection: 'row',
     marginTop: 16,
