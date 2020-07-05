@@ -3,11 +3,16 @@ import {View, Text, Image, ScrollView, Alert} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Feather as Icon} from '@expo/vector-icons';
 import MapView, {Marker} from 'react-native-maps';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 import {SvgUri} from 'react-native-svg';
 import * as Location from 'expo-location';
 import api from '../../services/api';
 import styles from './styles';
+
+interface RouteParams {
+  city: string;
+  uf: string;
+}
 
 interface Item {
   id: number;
@@ -31,6 +36,11 @@ const Points: React.FC = () => {
     0,
     0,
   ]);
+
+  const navigator = useNavigation();
+  const route = useRoute();
+
+  const routeParams = route.params as RouteParams;
 
   useEffect(() => {
     async function loadInitialPosition() {
@@ -58,8 +68,8 @@ const Points: React.FC = () => {
     api
       .get('/points', {
         params: {
-          city: 'Americana',
-          uf: 'SP',
+          city: routeParams.city,
+          uf: routeParams.uf,
           items: [1, 2, 3, 4, 5, 6],
         },
       })
@@ -71,8 +81,6 @@ const Points: React.FC = () => {
       setItems(response.data);
     });
   }, []);
-
-  const navigator = useNavigation();
 
   function navigateBack() {
     navigator.goBack();
