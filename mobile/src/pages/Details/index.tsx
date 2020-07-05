@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import {FontAwesome as Icon} from '@expo/vector-icons';
 import {useNavigation, useRoute} from '@react-navigation/native';
+import * as MailComposer from 'expo-mail-composer';
 import api from '../../services/api';
 import styles from './styles';
 
@@ -39,6 +40,13 @@ const Details: React.FC = () => {
 
   function navigateBack() {
     navigator.navigate('Points');
+  }
+
+  function sendEmail() {
+    MailComposer.composeAsync({
+      subject: 'Interesse em coleta de resíduos',
+      recipients: [data.point.email],
+    });
   }
 
   if (!data.point) {
@@ -79,7 +87,7 @@ const Details: React.FC = () => {
           <Icon name="whatsapp" size={16} color="#fff" />
           <Text style={styles.contactButtonText}>Whatsapp</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.contactButton}>
+        <TouchableOpacity style={styles.contactButton} onPress={sendEmail}>
           <Icon name="envelope" size={16} color="#fff" />
           <Text style={styles.contactButtonText}>E-mail</Text>
         </TouchableOpacity>
