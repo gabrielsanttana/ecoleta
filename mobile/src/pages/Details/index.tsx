@@ -84,6 +84,8 @@ const Details: React.FC = () => {
         <Text style={styles.pointAddressDescription}>
           {data.point.city}, {data.point.uf}
         </Text>
+        <Text style={styles.pointAddressTitle}>Telefone</Text>
+        <Text style={styles.pointItems}>{data.point.whatsapp}</Text>
       </View>
 
       <View style={styles.footer}>
