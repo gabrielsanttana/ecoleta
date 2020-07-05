@@ -70,7 +70,7 @@ It's important that both the smartphone and the computer are connected to the sa
 
 ```
 const api = axios.create({
-  baseURL: 'http://LOCAL_IP_ADDRESS:3333',
+  baseURL: 'http://000.000.00.000:3333',
 });
 ```
 
