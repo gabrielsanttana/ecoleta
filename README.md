@@ -59,14 +59,20 @@ The application will pop-up in the browser on http://localhost:3000
 
 ### 📱 Mobile
 
-As the web and mobile app use the same API, it's necessary to have an environment variable with the local host IP address inside a .env file in the project root, in order to make React Native able to call the API locally:
+As the web and mobile app use the same API, it's necessary to have an environment variable with the local IP address inside a `.env` file in the project root, in order to make React Native able to call the API locally:
 
 ```
-API_IP_ADDRESS=ip_address
+LOCAL_IP_ADDRESS=ip_address
 ```
 
 It's also necessary to have an React Native Expo environment setup and the Expo mobile app installed on your smartphone.
-It's important that both the smartphone and the computer are connected to the same network.
+It's important that both the smartphone and the computer are connected to the same network and to have the local IP address on the baseURL in the `api.ts` file:
+
+``
+const api = axios.create({
+  baseURL: 'http://LOCAL_IP_ADDRESS:3333',
+});
+``
 
 With that:
 
@@ -74,11 +80,12 @@ With that:
 $ npm install -g expo-cli
 $ cd be-the-hero/mobile
 $ npm install
+$ expo install
 $ npm start
 ```
 
-<p>A new window with application log will open in the browser</p>
-<p>Then, you can load the app by scanning the QR code with the Expo mobile app or by using the local URL</p>
+<p>A new window with the application log will open in the browser</p>
+<p>Then, you can simply load the app by scanning the QR code with the Expo mobile app or by using the local URL</p>
 
 ## ⚖️ License
 
