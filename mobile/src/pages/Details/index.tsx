@@ -1,29 +1,48 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import {FontAwesome as Icon} from '@expo/vector-icons';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 import api from '../../services/api';
 import styles from './styles';
 
-interface Item {
-  id: number;
-  title: string;
-  image_url: string;
+interface RouteParams {
+  point_id: number;
+}
+
+interface Data {
+  point: {
+    image: string;
+    name: string;
+    email: string;
+    whatsapp: string;
+    city: string;
+    uf: string;
+  };
+  collectedItems: {
+    title: string;
+  }[];
 }
 
 const Details: React.FC = () => {
-  const [items, setItems] = useState<Item[]>([]);
+  const [data, setData] = useState<Data>({} as Data);
+
+  const navigator = useNavigation();
+  const route = useRoute();
+
+  const routeParams = route.params as RouteParams;
 
   useEffect(() => {
-    api.get('/items').then((response) => {
-      setItems(response.data);
+    api.get(`/points/${routeParams.point_id}`).then((response) => {
+      setData(response.data);
     });
   }, []);
 
-  const navigator = useNavigation();
-
   function navigateBack() {
     navigator.navigate('Points');
+  }
+
+  if (!data.point) {
+    return null;
   }
 
   return (
@@ -36,16 +55,23 @@ const Details: React.FC = () => {
         <Image
           style={styles.image}
           source={{
-            uri:
-              'https://www.tce.sp.gov.br/sites/default/files/styles/max_800x800/public/noticias/coleta%20seletivaaa.png',
+            uri: data.point.image,
           }}
         />
 
-        <Text style={styles.pointTitle}>Mercado do Carlão</Text>
-        <Text style={styles.pointItems}>Lâmpadas, Óleo de Cozinha</Text>
+        <Text style={styles.pointTitle}>{data.point.name}</Text>
+        {data.collectedItems.map((item, index) => {
+          return (
+            <Text key={String(index)} style={styles.pointItems}>
+              {item.title}
+            </Text>
+          );
+        })}
 
         <Text style={styles.pointAddressTitle}>Endereço</Text>
-        <Text style={styles.pointAddressDescription}>Americana, São Paulo</Text>
+        <Text style={styles.pointAddressDescription}>
+          {data.point.city}, {data.point.uf}
+        </Text>
       </View>
 
       <View style={styles.footer}>

@@ -17,7 +17,7 @@ interface Item {
 
 interface Point {
   id: number;
-  imageUrl: string;
+  image: string;
   name: string;
   latitude: number;
   longitude: number;
@@ -78,8 +78,8 @@ const Points: React.FC = () => {
     navigator.goBack();
   }
 
-  function navigateToDetailsPage() {
-    navigator.navigate('Details');
+  function navigateToDetailsPage(point_id: number) {
+    navigator.navigate('Details', {point_id});
   }
 
   function selectPressedItem(item: number) {
@@ -125,18 +125,19 @@ const Points: React.FC = () => {
               {points.map((point) => {
                 return (
                   <Marker
+                    key={point.id}
                     style={styles.mapMarker}
                     coordinate={{
                       latitude: point.latitude,
                       longitude: point.longitude,
                     }}
-                    onPress={navigateToDetailsPage}
+                    onPress={() => navigateToDetailsPage(point.id)}
                   >
                     <View style={styles.mapMarkerContainer}>
                       <Image
                         style={styles.mapMarkerImage}
                         source={{
-                          uri: point.imageUrl,
+                          uri: point.image,
                         }}
                       />
                       <Text style={styles.mapMarkerTitle}>{point.name}</Text>
