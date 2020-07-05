@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, Text, TouchableOpacity, Image, Linking} from 'react-native';
 import {FontAwesome as Icon} from '@expo/vector-icons';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import * as MailComposer from 'expo-mail-composer';
@@ -49,6 +49,10 @@ const Details: React.FC = () => {
     });
   }
 
+  function sendWhatsapp() {
+    Linking.openURL(`whatsapp://send`);
+  }
+
   if (!data.point) {
     return null;
   }
@@ -83,7 +87,7 @@ const Details: React.FC = () => {
       </View>
 
       <View style={styles.footer}>
-        <TouchableOpacity style={styles.contactButton}>
+        <TouchableOpacity style={styles.contactButton} onPress={sendWhatsapp}>
           <Icon name="whatsapp" size={16} color="#fff" />
           <Text style={styles.contactButtonText}>Whatsapp</Text>
         </TouchableOpacity>
