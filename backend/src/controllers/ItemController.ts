@@ -12,7 +12,7 @@ class ItemController {
       return {
         id: item.id,
         title: item.title,
-        image_url: `http://${process.env.API_IP_ADDRESS}:3333/uploads/${item.image}`,
+        image_url: `http://${process.env.LOCAL_IP_ADDRESS}:3333/uploads/${item.image}`,
       };
     });
 
