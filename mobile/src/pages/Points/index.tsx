@@ -70,11 +70,11 @@ const Points: React.FC = () => {
         params: {
           city: routeParams.city,
           uf: routeParams.uf,
-          items: [1, 2, 3, 4, 5, 6],
+          items: selectedItems,
         },
       })
       .then((response) => setPoints(response.data));
-  }, []);
+  }, [selectedItems]);
 
   useEffect(() => {
     api.get('/items').then((response) => {
