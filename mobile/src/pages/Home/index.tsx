@@ -1,15 +1,21 @@
-import React from 'react';
-import {View, Text, Image, ImageBackground} from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, Image, ImageBackground, TextInput} from 'react-native';
 import {RectButton} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 import {Feather as Icon} from '@expo/vector-icons';
 import styles from './styles';
 
 const Home: React.FC = () => {
+  const [city, setCity] = useState<string>('');
+  const [uf, setUf] = useState<string>('');
+
   const navigator = useNavigation();
 
   const navigateToPointsPage = () => {
-    navigator.navigate('Points');
+    navigator.navigate('Points', {
+      city,
+      uf,
+    });
   };
 
   return (
@@ -21,13 +27,30 @@ const Home: React.FC = () => {
       <View style={styles.main}>
         <Image source={require('../../assets/logo.png')} />
 
-        <Text style={styles.title}>Seu marketplace de coleta de resíduos</Text>
-        <Text style={styles.description}>
-          Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente
-        </Text>
+        <View style={styles.descriptionContainer}>
+          <Text style={styles.title}>
+            Seu marketplace de coleta de resíduos
+          </Text>
+          <Text style={styles.description}>
+            Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente
+          </Text>
+        </View>
       </View>
 
       <View style={styles.footer}>
+        <TextInput
+          style={styles.addressInput}
+          onChangeText={(text) => setCity(text)}
+          placeholder="Digite a cidade"
+          autoCorrect={false}
+        />
+        <TextInput
+          style={styles.addressInput}
+          onChangeText={(text) => setUf(text)}
+          placeholder="Digite o estado (sigla)"
+          autoCapitalize="characters"
+          autoCorrect={false}
+        />
         <RectButton style={styles.button} onPress={navigateToPointsPage}>
           <View style={styles.buttonIcon}>
             <Text style={styles.buttonIconText}>

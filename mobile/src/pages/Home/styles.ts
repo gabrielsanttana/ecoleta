@@ -12,6 +12,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
+  descriptionContainer: {
+    marginBottom: 30,
+  },
+
   title: {
     fontSize: 32,
     fontWeight: 'bold',
@@ -29,6 +33,15 @@ const styles = StyleSheet.create({
   },
 
   footer: {},
+
+  addressInput: {
+    width: '100%',
+    height: 60,
+    backgroundColor: '#fff',
+    marginBottom: 10,
+    borderRadius: 8,
+    paddingHorizontal: 20,
+  },
 
   button: {
     backgroundColor: '#34CB79',
