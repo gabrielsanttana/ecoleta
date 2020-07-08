@@ -4,9 +4,9 @@
 
 #####
 
-<h4 align="center">An application that helps people identify recycling collection points ♻️</h4>
-
 <img src="./assets/web_home.png" />
+
+<h4 align="center">An application that helps people identify recycling collection points ♻️</h4>
 
 ## 🛠️ Technologies
 
