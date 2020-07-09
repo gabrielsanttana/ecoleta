@@ -101,6 +101,12 @@
   color: #6c6c80;
 }
 
+#create-point form .field input[type='number']::-webkit-outer-spin-button,
+::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 #create-point form .field input::placeholder select::placeholder {
   color: #a0a0b2;
 }
