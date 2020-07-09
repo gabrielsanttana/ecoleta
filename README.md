@@ -6,7 +6,7 @@
 
 <img src="./assets/web_home.png" />
 
-<p align="center">♻️ An application that helps people identify recycling collection points </p>
+<p align="center">An application that helps people identify recycling collection points ♻️</p>
 
 ## 🛠️ Technologies
 
