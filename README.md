@@ -25,9 +25,10 @@
 ## ⚙️ Requirements
 
 <ul>
+  <li><a href="https://git-scm.com/">Git</a></li>
   <li><a href="https://nodejs.org/en/">Node.js</a></li>
   <li><a href="https://www.npmjs.com/">NPM</a></li>
-  <li><a href="https://expo.io/">Expo</a></li>
+  <li><a href="https://expo.io/">Expo App</a></li>
   <li><a href="https://expo.io/">Expo CLI</a></li>
 </ul>
 
@@ -58,6 +59,8 @@ $ npm start
 ```
 
 The API will start serving on http://localhost:3333
+
+> Note: It's important to have the API running to be able to properly run the web and mobile app
 
 ### 💻 Web
 

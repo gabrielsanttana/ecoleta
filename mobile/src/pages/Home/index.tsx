@@ -19,8 +19,8 @@ const Home: React.FC = () => {
   const [ufs, setUfs] = useState<Item[]>([]);
   const [cities, setCities] = useState<Item[]>([]);
 
-  const [selectedUf, setSelectedUf] = useState<string>('');
-  const [selectedCity, setSelectedCity] = useState<string>('');
+  const [selectedUf, setSelectedUf] = useState<string>('0');
+  const [selectedCity, setSelectedCity] = useState<string>('0');
 
   const navigator = useNavigation();
 
