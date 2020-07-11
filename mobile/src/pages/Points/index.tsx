@@ -10,8 +10,8 @@ import api from '../../services/api';
 import styles from './styles';
 
 interface RouteParams {
-  city: string;
-  uf: string;
+  selectedCity: string;
+  selectedUf: string;
 }
 
 interface Item {
@@ -68,8 +68,8 @@ const Points: React.FC = () => {
     api
       .get('/points', {
         params: {
-          city: routeParams.city,
-          uf: routeParams.uf,
+          city: routeParams.selectedCity,
+          uf: routeParams.selectedUf,
           items: selectedItems,
         },
       })
@@ -144,9 +144,7 @@ const Points: React.FC = () => {
                     <View style={styles.mapMarkerContainer}>
                       <Image
                         style={styles.mapMarkerImage}
-                        source={{
-                          uri: point.image,
-                        }}
+                        source={require('../../assets/recycling.jpg')}
                       />
                       <Text style={styles.mapMarkerTitle}>{point.name}</Text>
                     </View>

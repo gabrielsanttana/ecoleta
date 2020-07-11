@@ -1,5 +1,5 @@
 import React, {useEffect, useState, ChangeEvent, FormEvent} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, RouteComponentProps} from 'react-router-dom';
 import {FiArrowLeft} from 'react-icons/fi';
 import axios from 'axios';
 import api from '../../services/api';
@@ -17,11 +17,11 @@ interface IBGEUFResponse {
   sigla: string;
 }
 
-interface IBGECityResponse {
+interface IBGECitiesResponse {
   nome: string;
 }
 
-const CreatePoint: React.FC = () => {
+const CreatePoint: React.FC<RouteComponentProps> = ({history}) => {
   const [items, setItems] = useState<Item[]>([]);
   const [ufs, setUfs] = useState<string[]>([]);
   const [cities, setCities] = useState<string[]>([]);
@@ -74,7 +74,7 @@ const CreatePoint: React.FC = () => {
     }
 
     axios
-      .get<IBGECityResponse[]>(
+      .get<IBGECitiesResponse[]>(
         `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUf}/municipios`,
       )
       .then((response) => {
@@ -134,16 +134,22 @@ const CreatePoint: React.FC = () => {
       name,
       email,
       whatsapp,
-      uf,
       latitude,
       longitude,
+      uf,
       city,
-      items,
+      itemsIds: items,
     };
 
-    await api.post('/points', data);
+    try {
+      await api.post('/points', data);
 
-    alert('Ponto de coleta cadastrado com sucesso!');
+      alert('Ponto de coleta cadastrado com sucesso!');
+
+      history.push('/');
+    } catch (err) {
+      alert('Ocorreu um erro ao cadastrar o ponto. Tente novamente.');
+    }
   }
 
   return (

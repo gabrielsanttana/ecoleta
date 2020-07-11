@@ -5,7 +5,6 @@ class PointController {
   async create(request: Request, response: Response) {
     const {
       name,
-      image,
       email,
       whatsapp,
       latitude,
@@ -29,7 +28,6 @@ class PointController {
     const trx = await knex.transaction();
 
     const pointIds = await trx('points').insert({
-      image,
       name,
       email,
       whatsapp,
