@@ -47,6 +47,8 @@ Example:
 LOCAL_IP_ADDRESS=000.000.00.000
 ```
 
+Then:
+
 ```bash
 $ cd ecoleta/backend
 $ npm install
