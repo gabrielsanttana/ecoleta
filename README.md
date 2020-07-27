@@ -101,3 +101,5 @@ $ npm start
 ## ⚖️ License
 
 [MIT License](https://github.com/gabrielsanttana/ecoleta/blob/master/LICENSE)
+
+<h6 align="center">Made with ❤️ by <a href="https://linkedin.com/in/gabrielsanttana">Gabriel Santana</a></h6>
