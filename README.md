@@ -38,7 +38,7 @@
 $ git clone https://github.com/gabrielsanttana/ecoleta
 ```
 
-### 🗄️ API
+### 📦 API
 
 As the web and mobile app use the same API, it's necessary to have an environment variable with the local IP address inside a `.env` file in the backend folder root, in order to make React Native able to call the API locally.
 
