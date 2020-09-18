@@ -88,7 +88,7 @@ With that:
 
 ```bash
 $ npm install -g expo-cli
-$ cd be-the-hero/mobile
+$ cd ecoleta/mobile
 $ npm install
 $ expo install
 $ npm start
