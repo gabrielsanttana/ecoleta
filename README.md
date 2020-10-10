@@ -73,7 +73,7 @@ The application will pop-up in the browser on http://localhost:3000
 
 ### 📱 Mobile
 
-It's also necessary to have an React Native Expo environment setup and the Expo mobile app installed on your smartphone.
+It's also necessary to have a React Native Expo environment setup and the Expo mobile app installed on your smartphone.
 It's important that both the smartphone and the computer are connected to the same network and to have the local IP address on the baseURL, in the `api.ts` file.
 
 Example:
